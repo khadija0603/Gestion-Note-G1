@@ -30,16 +30,25 @@ export class AuthComponent implements OnInit {
       role: "apprenant",
       etat: "actif",
       image: "www.exmple.com",
-      classe: "Seconde S"
+      note : [{}]
     },
     {
+      id: 3,
       nomComplet: "formateur",
       email: "formateur@gmail.com",
       password: "passer",
       role: "formateur",
       etat: "actif",
       image: "www.exmple.com",
-      matieres: ["svt", "pc"],
+    },
+    {
+      id: 4,
+      nomComplet: "formateur2",
+      email: "formateur2@gmail.com",
+      password: "passer",
+      role: "formateur",
+      etat: "actif",
+      image: "www.exmple.com",
     }
   ]
 
@@ -117,6 +126,7 @@ export class AuthComponent implements OnInit {
 
       //On essaye de recuperer le user qui a le mail siasie
       this.findUser = this.db.find((element: any) => element.email == this.email);
+
       //on verifie si notre variable à trouver un objet correspondant
       if (this.findUser) {
         //On verifie si le mot de passe est bon
